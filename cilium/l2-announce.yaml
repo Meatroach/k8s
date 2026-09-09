@@ -1,0 +1,12 @@
+apiVersion: cilium.io/v2alpha1
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: platform-gateway
+spec:
+  serviceSelector:
+    matchLabels:
+      io.kubernetes.service.namespace: kube-system
+      io.kubernetes.service.name: cilium-gateway-platform-gateway
+
+  loadBalancerIPs: true
+  externalIPs: false
