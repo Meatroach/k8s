@@ -1,0 +1,12 @@
+apiVersion: cilium.io/v2
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: platform-vip
+spec:
+  blocks:
+    - cidr: 172.26.60.200/32
+
+  serviceSelector:
+    matchLabels:
+      io.kubernetes.service.namespace: kube-system
+      io.kubernetes.service.name: cilium-gateway-platform-gateway
